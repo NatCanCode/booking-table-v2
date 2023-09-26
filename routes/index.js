@@ -11,14 +11,17 @@ router.get('/', function(req, res, next) {
   res.json({ message: "Hello, get!" });
 });
 
+/* POST */
 router.post('/', function(req, res, next) {
   res.json({ message: "Hello, post!" });
 });
 
+/* PUT */
 router.put('/', function(req, res, next) {
   res.json({ message: "Hello, put!" });
 });
 
+/* DELETE */
 router.delete('/', function(req, res, next) {
   res.json({ message: "Hello, delete!" });
 });
