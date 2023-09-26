@@ -15,7 +15,7 @@ const Spot = require('../models/spot')(
 router.get('/', async (req, res, next) => {
     try {
         const spots = await Spot.findAll();
-        res.json({ rooms });
+        res.json({ spots });
     } catch (error) {
         next(error);
     }
@@ -25,19 +25,26 @@ router.get('/', async (req, res, next) => {
 /* POST */
 router.post('/', async (req, res, next) => {
     const spot = await Spot.create({
-        name: 'Peony'
+        name: 'Hey!'
     })
   res.json({ spot });
 });
 
 /* PUT */
-router.put('/', function(req, res, next) {
-  res.json({ message: "Hello, put spot!" });
+router.put('/', async function(req, res, next) {
+    const id = 1;
+    const spot = await Spot.findByPk(id);
+    spot.name = 'Beetle';
+    await spot.save();
+    res.json({ spot });
 });
 
 /* DELETE */
-router.delete('/', function(req, res, next) {
-  res.json({ message: "Hello, delete spot!" });
+router.delete('/', async function(req, res, next) {
+    const id = 3;
+    const spot = await Spot.findByPk(id);
+    await spot.destroy();
+    res.json({ spot });
 });
 
 module.exports = router;

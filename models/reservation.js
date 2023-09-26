@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Reservation.init({
     date: DataTypes.DATE,
     name: DataTypes.STRING,
+    // numberOfGuests: DataTypes.INTEGER,
     note: DataTypes.STRING,
     status: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,

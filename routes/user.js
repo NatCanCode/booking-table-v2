@@ -15,7 +15,7 @@ const User = require('../models/user')(
 router.get('/', async (req, res, next) => {
     try {
         const users = await User.findAll();
-        res.json({ rooms });
+        res.json({ users });
     } catch (error) {
         next(error);
     }
@@ -26,23 +26,30 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     const user = await User.create({
         role: 'client',
-        firstName: 'Louie',
-        lastName: 'Rose',
-        email: 'louis.rose@gmail.com',
+        firstName: 'Yvan',
+        lastName: 'Black',
+        email: 'yvan.black@gmail.com',
         phoneNumber: '+44 4567 456 457',
-        password: 'DoNotDare0'
+        password: 'DoNotDare@'
     })
   res.json({ user });
 });
 
 /* PUT */
-router.put('/', function(req, res, next) {
-  res.json({ message: "Hello, put user!" });
+router.put('/', async function(req, res, next) {
+    const id = 1;
+    const user = await User.findByPk(id);
+    user.name = 'Gaspard';
+    await user.save();
+    res.json({ user });
 });
 
 /* DELETE */
-router.delete('/', function(req, res, next) {
-  res.json({ message: "Hello, delete user!" });
+router.delete('/', async function(req, res, next) {
+    const id = 2;
+    const user = await User.findByPk(id);
+    await user.destroy();
+    res.json({ user });
 });
 
 module.exports = router;

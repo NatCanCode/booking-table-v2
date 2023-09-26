@@ -25,19 +25,26 @@ router.get('/', async (req, res, next) => {
 /* POST */
 router.post('/', async (req, res, next) => {
     const room = await Room.create({
-        name: 'Rose garden'
+        name: 'Snow as Rain'
     });
   res.json({ room });
 });
 
 /* PUT */
-router.put('/', function(req, res, next) {
-  res.json({ message: "Hello, put room!" });
+router.put('/', async function(req, res, next) {
+    const id = 1;
+    const room = await Room.findByPk(id);
+    room.name = 'Hell on Earth';
+    await room.save();
+    res.json({ room });
 });
 
 /* DELETE */
-router.delete('/', function(req, res, next) {
-  res.json({ message: "Hello, delete room!" });
+router.delete('/', async function(req, res, next) {
+    const id = 4;
+    const room = await Room.findByPk(id);
+    await room.destroy();
+    res.json({ room });
 });
 
 module.exports = router;

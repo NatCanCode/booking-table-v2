@@ -26,24 +26,32 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     const reservation = await Reservation.create({
         date: Date.now(),
-        name: 'Jason',
+        name: 'Ms Sunshine',
+        // numberOfGuests: 2,
         note: 'rooftop please',
-        status: '1',
-        userId: '2',
-        spotId: '3',
-        roomId: '4'
+        status: 1,
+        userId: 2,
+        spotId: 3,
+        roomId: 4
     });
   res.json({ reservation });
 });
 
 /* PUT */
-router.put('/', function(req, res, next) {
-  res.json({ message: "Hello, put reservation!" });
+router.put('/', async function (req, res, next) {
+    const id = 1;
+    const reservation = await Reservation.findByPk(id);
+    reservation.note = 'sunset view please';
+    await reservation.save();
+    res.json({ reservation });
 });
 
 /* DELETE */
-router.delete('/', function(req, res, next) {
-  res.json({ message: "Hello, delete reservation!" });
+router.delete('/', async function(req, res, next) {
+    const id = 4;
+    const reservation = await Reservation.findByPk(id);
+    await reservation.destroy();
+    res.json({ reservation });
 });
 
 module.exports = router;
