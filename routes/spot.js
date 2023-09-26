@@ -12,8 +12,14 @@ const Spot = require('../models/spot')(
 );
 
 /* GET */
-router.get('/', function(req, res, next) {
-  res.json({ message: "Hello, get spot!" });
+router.get('/', async (req, res, next) => {
+    try {
+        const spots = await Spot.findAll();
+        res.json({ rooms });
+    } catch (error) {
+        next(error);
+    }
+//  res.json({ message: "Hello, get spot!" });
 });
 
 /* POST */

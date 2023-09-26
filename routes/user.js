@@ -12,8 +12,14 @@ const User = require('../models/user')(
 );
 
 /* GET */
-router.get('/', function(req, res, next) {
-  res.json({ message: "Hello, get user!" });
+router.get('/', async (req, res, next) => {
+    try {
+        const users = await User.findAll();
+        res.json({ rooms });
+    } catch (error) {
+        next(error);
+    }
+//  res.json({ message: "Hello, get user!" });
 });
 
 /* POST */

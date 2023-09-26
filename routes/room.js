@@ -12,8 +12,14 @@ const Room = require('../models/room')(
 );
 
 /* GET */
-router.get('/', function(req, res, next) {
-  res.json({ message: "Hello, get room!" });
+router.get('/', async (req, res, next) => {
+    try {
+        const rooms = await Room.findAll();
+        res.json({ rooms });
+    } catch (error) {
+        next(error);
+    }
+//  res.json({ message: "Hello, get room!" });
 });
 
 /* POST */

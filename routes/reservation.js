@@ -12,8 +12,14 @@ const Reservation = require('../models/reservation')(
 );
 
 /* GET */
-router.get('/', function(req, res, next) {
-  res.json({ message: "Hello, get reservation!" });
+router.get('/', async (req, res, next) => {
+    try {
+        const reservations = await Reservation.findAll();
+        res.json({ reservations });
+    } catch (error) {
+        next(error);
+    }
+//   res.json({ message: "Hello, get reservation!" });
 });
 
 /* POST */
