@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const verifyJWT = (req, res, next) => {
-  const  SECRET_KEY = "secretkey23456"; // A remplacer par la même clé secrète que dans la route signin dans fichier auth.js
+  const SECRET_KEY = "secretkey23456"; // A remplacer par la même clé secrète que dans la route signin dans fichier auth.js
   const token = req.header('Authorization');
 
   if(!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
