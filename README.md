@@ -3,13 +3,13 @@
 
 
 ## Creation of an API using:
-##### Node.js
-##### Express
-##### API Rest (CRUD)
-##### PostgreSQL
-##### Sequelize
-##### Authentification
-##### Test (Jest and Supertest)  
+##### - Node.js
+##### - Express
+##### - API Rest (CRUD)
+##### - PostgreSQL
+##### - Sequelize
+##### - Authentification
+##### - Test (Jest and Supertest)  
 
 
 ## Tools:
@@ -21,8 +21,8 @@
 
 
 ## Resources:
-##### Node.js 
-##### Express
+##### [Node.js](https://nodejs.org/api/)
+##### [Express](https://expressjs.com/en/5x/api.html)
 
 
 ## Database:
