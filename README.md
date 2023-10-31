@@ -3,26 +3,26 @@
 
 
 ## Creation of an API using:
-- [x] ##### Node.js
-- [x] ##### Express
-##### - [x]  API Rest (CRUD)
-##### - [x]  PostgreSQL
-##### - [x]  Sequelize
-##### - [x]  Authentification
-##### - [x]  Test (Jest and Supertest)  
+- [x]  Node.js
+- [x]  Express
+- [x]  API Rest (CRUD)
+- [x]  PostgreSQL
+- [x]  Sequelize
+- [x]  Authentification
+- [x]  Test (Jest and Supertest)  
 
 
 ## Tools:
-##### VSCode
-##### terminal
-##### Chrome and Safari
-##### TablePlus
-##### Postman
+- [x]  VSCode
+- [x]  terminal
+- [x]  Chrome and Safari
+- [x]  TablePlus
+- [x]  Postman
 
 
 ## Resources:
-##### [Node.js](https://nodejs.org/api/)
-##### [Express](https://expressjs.com/en/5x/api.html)
+- [x]  [Node.js](https://nodejs.org/api/)
+- [x]  [Express](https://expressjs.com/en/5x/api.html)
 
 
 ## Database:
