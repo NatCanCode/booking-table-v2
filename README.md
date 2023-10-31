@@ -29,7 +29,7 @@
 
 | Tables           | SQL            | 
 :-------------------------:|:-------------------------:
-![Tables](https://github.com/NatCanCode/booking-table-v2/assets/77299658/b6f465f1-75fa-4f94-9f67-16a3feec3509) | <img width="636" alt="Screenshot 2023-10-31 at 18 39 54" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/99c145cb-ef14-433f-8e96-766a4c6556f8">
+| ![Tables](https://github.com/NatCanCode/booking-table-v2/assets/77299658/b6f465f1-75fa-4f94-9f67-16a3feec3509) | <img width="636" alt="Screenshot 2023-10-31 at 18 39 54" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/99c145cb-ef14-433f-8e96-766a4c6556f8"> |
 
 
 
@@ -40,17 +40,15 @@ brew install node@20 (version 20)
 ```
 ```
 brew link node@20
-``` 
+```
+
 ### Install Express:
 ```
 npm install express-generator -g
 ```
 ```
 npx express project-name --no-view
-``` 
-
-### Create four routes in index.js using the GET, POST, PUT, DELETE methods and test them with Postman:
-
+```
 
 ### Launch the server after updates:
 ```
@@ -63,6 +61,9 @@ node --watch
 ```
 
 
-Schémas de la base de données
-Captures d'écran de Postman
-Synthèse des problématiques rencontrées et solutions envisagées
+### Create four routes in index.js using the GET, POST, PUT, DELETE methods and test them with Postman:
+
+| GET           | POST            | PUT           | DELETE            | 
+:-------------------------:|:-------------------------:-------------------------:|:-------------------------:
+|  |  |  |  | 
+
