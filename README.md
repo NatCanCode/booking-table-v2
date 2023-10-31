@@ -64,6 +64,11 @@ node --watch
 ### Create four routes in index.js using the GET, POST, PUT, DELETE methods and test them with Postman:
 
 | GET           | POST            | PUT           | DELETE            | 
-:-------------------------:|:-------------------------:-------------------------:|:-------------------------:
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 |  |  |  |  | 
 
+
+### Next steps:
+- [ ]  Design the front end
+- [ ]  Code the front end
+- [ ]  Link back and front end
