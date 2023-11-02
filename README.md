@@ -65,10 +65,8 @@ node --watch
 
 | GET           | POST            | PUT           | DELETE            | 
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-| <img width="1440" alt="Screenshot 2023-11-02 at 09 29 52" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/670a2a2b-d45f-4003-a476-e95aafcbaeba">
- | <img width="1440" alt="Screenshot 2023-10-31 at 19 17 14" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/eb6fea30-a599-4f77-b5de-9f77ed653fe0"> |  |  | 
-| <img width="1440" alt="Screenshot 2023-11-02 at 09 30 12" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/1886f7ca-2527-4f4c-aacd-8cba398dc162">
- | <img width="1440" alt="Screenshot 2023-10-31 at 19 14 06" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/16414961-8f2a-4b25-820c-d460c61a979c"> |  |  | 
+| <img width="1440" alt="Screenshot 2023-11-02 at 09 29 52" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/670a2a2b-d45f-4003-a476-e95aafcbaeba">  | <img width="1440" alt="Screenshot 2023-10-31 at 19 17 14" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/eb6fea30-a599-4f77-b5de-9f77ed653fe0"> |  |  |
+| <img width="1440" alt="Screenshot 2023-11-02 at 09 30 12" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/1886f7ca-2527-4f4c-aacd-8cba398dc162"> | <img width="1440" alt="Screenshot 2023-10-31 at 19 14 06" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/16414961-8f2a-4b25-820c-d460c61a979c"> |  |  | 
 
 
 ### Next steps:
