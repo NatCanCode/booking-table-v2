@@ -14,7 +14,7 @@ const Reservation = require('../models/reservation')(
 /* GET */
 router.get('/', async (req, res, next) => {
     try {
-        const reservations = await Reservation.findAll();
+        const reservations = await Reservation.findAll(); // Test findAll()
         res.json({ reservations });
     } catch (error) {
         next(error);
