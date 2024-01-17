@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Reservation extends Model {
     /**
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
     spotId: DataTypes.INTEGER,
-    roomId: DataTypes.INTEGER
+    roomId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Reservation',

@@ -1,29 +1,32 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const reservationRouter = require('./reservation')
+const roomRouter = require('./room')
+const spotRouter = require('./spot')
+const userRouter = require('./user')
 
-const reservationRouter = require('./reservation');
-const roomRouter = require('./room');
-const spotRouter = require('./spot');
-const userRouter = require('./user');
+// Test lint:
+// const firstName = br > 'John'
+// npm run lint
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.json({ message: "Hello, get!" });
-});
+router.get('/', (req, res, next) => {
+  res.json({ message: 'Hello, get!' })
+})
 
 /* POST */
-router.post('/', function(req, res, next) {
-  res.json({ message: "Hello, post!" });
-});
+router.post('/', (req, res, next) => {
+  res.json({ message: 'Hello, post!' })
+})
 
 /* PUT */
-router.put('/', function(req, res, next) {
-  res.json({ message: "Hello, put!" });
+router.put('/', (req, res, next) => {
+  res.json({ message: 'Hello, put!' });
 });
 
 /* DELETE */
-router.delete('/', function(req, res, next) {
-  res.json({ message: "Hello, delete!" });
+router.delete('/', (req, res, next) => {
+  res.json({ message: 'Hello, delete!' });
 });
 
 router.use('/reservation', reservationRouter);
