@@ -46,21 +46,56 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-/* PUT */ // TODO: Update dynamically
-router.put('/', async function(req, res, next) {
-    const id = 1;
-    const user = await User.findByPk(id);
-    user.name = 'Gaspard';
+/* PUT */
+router.put("/:userId", async (req, res, next) => {
+  try {
+    const userId = req.params.userId; // Get the user ID from the URL
+    const user = await User.findByPk(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    // Update user data with the information provided in the request body
+    user.firstName = req.body.firstName;
+    user.lastName = req.body.lastName;
+    user.email = req.body.email;
+    user.phoneNumber = req.body.phoneNumber;
+
+    if (req.body.password) {
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(req.body.password, salt);
+      
+      user.password = hashedPassword;  
+    }
+
     await user.save();
-    res.json({ user });
+
+    res.json({ message: "User updated", user });
+  } catch (error) {
+    // Handle any errors that occur during the update
+    next(error);
+  }
 });
 
-/* DELETE */ // TODO: Update dynamically
-router.delete('/', async function(req, res, next) {
-    const id = 2;
-    const user = await User.findByPk(id);
+
+/* DELETE */
+router.delete("/:userId", async (req, res, next) => {
+  try {
+    const userId = req.params.userId; // Get the user ID from the URL
+    const user = await User.findByPk(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
     await user.destroy();
-    res.json({ user });
+
+    res.json({ message: "User deleted" });
+  } catch (error) {
+    // Handle any errors that occur during the delete
+    next(error);
+  }
 });
 
 // Dina's code 1/2
