@@ -24,16 +24,39 @@ router.get('/', async (req, res, next) => {
 });
 
 /* POST */
-router.post('/', async (req, res, next) => {
-    const user = await User.create({
-        role: 'client',
-        firstName: 'Yvan',
-        lastName: 'Black',
-        email: 'yvan.black@gmail.com',
-        phoneNumber: '+44 4567 456 457',
-        password: 'DoNotDare@'
-    })
-    res.json({ user });
+// router.post('/', async (req, res, next) => {
+//     const user = await User.create({
+//         role: 'client',
+//         firstName: 'Yvan',
+//         lastName: 'Black',
+//         email: 'yvan.black@gmail.com',
+//         phoneNumber: '+44 4567 456 457',
+//         password: 'DoNotDare@'
+//     })
+//     res.json({ user });
+// });
+
+/* Post User */
+router.post("/", async (req, res, next) => {
+  try {
+    // Check if the email already exists in the database
+    const existingUser = await User.findOne({
+      where: { email: req.body.email },
+    });
+
+    // If an existing user is found, respond with an error
+    if (existingUser) {
+      return res.status(400).json({ error: "Email already exists" });
+    }
+
+   // Create a new user with data from the request body
+  const user = await User.create(req.body);
+
+    res.json({ message: user });
+  } catch (error) {
+    // Handle any errors that occur during user creation
+    next(error);
+  }
 });
 
 /* PUT */
