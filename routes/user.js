@@ -49,7 +49,8 @@ router.post("/", async (req, res, next) => {
 /* PUT */
 router.put("/:userId", async (req, res, next) => {
   try {
-    const userId = req.params.userId; // Get the user ID from the URL
+    // Get the user ID from the URL
+    const userId = req.params.userId;
     const user = await User.findByPk(userId);
 
     if (!user) {
@@ -73,7 +74,7 @@ router.put("/:userId", async (req, res, next) => {
 
     res.json({ message: "User updated", user });
   } catch (error) {
-    // Handle any errors that occur during the update
+    // Handle any error that occurs using the update route
     next(error);
   }
 });
@@ -82,7 +83,8 @@ router.put("/:userId", async (req, res, next) => {
 /* DELETE */
 router.delete("/:userId", async (req, res, next) => {
   try {
-    const userId = req.params.userId; // Get the user ID from the URL
+    // Get the user ID from the URL
+    const userId = req.params.userId; 
     const user = await User.findByPk(userId);
 
     if (!user) {
@@ -93,7 +95,7 @@ router.delete("/:userId", async (req, res, next) => {
 
     res.json({ message: "User deleted" });
   } catch (error) {
-    // Handle any errors that occur during the delete
+    // Handle any error that occurs using the delete route
     next(error);
   }
 });
