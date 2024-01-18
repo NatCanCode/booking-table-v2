@@ -46,7 +46,7 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-/* PUT */
+/* PUT */ // TODO: Update dynamically
 router.put('/', async function(req, res, next) {
     const id = 1;
     const user = await User.findByPk(id);
@@ -55,7 +55,7 @@ router.put('/', async function(req, res, next) {
     res.json({ user });
 });
 
-/* DELETE */
+/* DELETE */ // TODO: Update dynamically
 router.delete('/', async function(req, res, next) {
     const id = 2;
     const user = await User.findByPk(id);
