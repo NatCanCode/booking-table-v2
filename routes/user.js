@@ -23,19 +23,6 @@ router.get('/', async (req, res, next) => {
 //  res.json({ message: "Hello, get user!" });
 });
 
-/* POST */
-// router.post('/', async (req, res, next) => {
-//     const user = await User.create({
-//         role: 'client',
-//         firstName: 'Yvan',
-//         lastName: 'Black',
-//         email: 'yvan.black@gmail.com',
-//         phoneNumber: '+44 4567 456 457',
-//         password: 'DoNotDare@'
-//     })
-//     res.json({ user });
-// });
-
 /* Post User */
 router.post("/", async (req, res, next) => {
   try {
