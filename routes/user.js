@@ -76,9 +76,11 @@ router.get('/', isAdmin, async (req, res, next) => {
 });
 
 /* GET current user */
-router.get('/me', async (req, res, next) => {
+router.get('/currentUser', async (req, res, next) => {
   try {
     const userID = req.user.id;
+    console.log("User ID:", userID);
+
     // Find the user by ID
     const currentUser = await User.findByPk(userID);
 
@@ -87,7 +89,7 @@ router.get('/me', async (req, res, next) => {
     }
 
     // User found, send the user data in the response
-    res.status(200).json(currentUser);
+    res.status(200).json({ currentUser });
   } catch (error) {
     next(error);
   }

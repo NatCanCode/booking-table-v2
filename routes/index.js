@@ -1,9 +1,10 @@
-const express = require('express')
-const router = express.Router()
-const reservationRouter = require('./reservation')
-const roomRouter = require('./room')
-const spotRouter = require('./spot')
-const userRouter = require('./user')
+const express = require('express');
+
+const router = express.Router();
+const reservationRouter = require('./reservation');
+const roomRouter = require('./room');
+const spotRouter = require('./spot');
+const userRouter = require('./user');
 
 // Test lint:
 // const firstName = br > 'John'
@@ -11,13 +12,13 @@ const userRouter = require('./user')
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.json({ message: 'Hello, get!' })
-})
+  res.json({ message: 'Hello, get!' });
+});
 
 /* POST */
 router.post('/', (req, res, next) => {
-  res.json({ message: 'Hello, post!' })
-})
+  res.json({ message: 'Hello, post!' });
+});
 
 /* PUT */
 router.put('/', (req, res, next) => {

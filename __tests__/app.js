@@ -1,5 +1,5 @@
 const request = require('supertest');
-const { Sequelize, DataTypes } = require('sequelize');
+// const { Sequelize, DataTypes } = require('sequelize');
 const app = require('../app');
 const { Reservation } = require('../db');
 const { User } = require('../db');

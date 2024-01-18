@@ -1,6 +1,32 @@
+// {
+//     "eslint.codeActionsOnSave.rules": {
+//         "source.fixAll.eslint": true,
+//     },
+//     "eslint.validate": [
+//         "javaScript"
+//     ],
+//     "launch": {
+        
+//         "configurations": [],
+//         "compounds": []
+//     },
+// }
+
 {
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "eslint.alwaysShowStatus": true,
+    "eslint.validate": [
+        "javascript"
+    ],
     "eslint.codeActionsOnSave.rules": {
-        "source.fixAll.eslint": true 
+        "source.fixAll.eslint": true
     },
-    "eslint.validate": ["javaScript"]
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    }
 }
