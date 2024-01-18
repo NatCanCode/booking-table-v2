@@ -88,7 +88,7 @@ router.get("/me", async (req, res, next) => {
         }
 
         // User found, send the user data in the response
-        res.status(200).json(currentUser);
+        res.status(200).json({ currentUser });
     } catch (error) {
         next(error);
     }
