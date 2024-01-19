@@ -1,79 +1,79 @@
-const request = require('supertest');
-const app = require('../app');
-const {Sequelize, DataTypes} = require("sequelize");
-const {Reservation} = require('../db')
-const {User} = require('../db')
-const {Room} = require('../db')
-const {Spot} = require('../db')
+const request = require("supertest");
+const app = require("../app");
+const { Sequelize, DataTypes } = require("sequelize");
+const { Reservation } = require("../db");
+const { User } = require("../db");
+const { Room } = require("../db");
+const { Spot } = require("../db");
 
-describe('GET /api/reservations', () => {
-  it('should return a 401 error', async () => {
+describe("GET /api/reservations", () => {
+  it("should return a 401 error", async () => {
     const res = await request(app)
-      .get('/api/reservations')
-      .expect('Content-Type', /json/)
+      .get("/api/reservations")
+      .expect("Content-Type", /json/)
       .expect(401);
   });
 });
 
 // Reservation.findAll()
-describe('Reservation entity', () => {
-  it('should return all the reservations', async () => {
+describe("Reservation entity", () => {
+  it("should return all the reservations", async () => {
     expect.assertions(1);
     try {
-      const reservations = await Reservation.findAll()
-      expect(reservations.length).toBeDefined()
+      const reservations = await Reservation.findAll();
+      expect(reservations.length).toBeDefined();
     } catch (e) {
-      console.log(e)
-      throw e
+      console.log(e);
+      throw e;
     }
-  })
-  return 
-})
+  });
+  return;
+});
 
 // User.findAll()
-describe('User entity', () => {
-  it('should return all the users', async () => {
+describe("User entity", () => {
+  it("should return all the users", async () => {
     expect.assertions(1);
     try {
-      const users = await User.findAll()
-      expect(users.length).toBeDefined()
+      const users = await User.findAll();
+      expect(users.length).toBeDefined();
     } catch (e) {
-      console.log(e)
-      throw e
+      console.log(e);
+      throw e;
     }
-  })
-  return 
-})
+  });
+  return;
+});
 
 // Room.findAll()
-describe('Room entity', () => {
-  it('should return all the rooms', async () => {
+describe("Room entity", () => {
+  it("should return all the rooms", async () => {
     expect.assertions(1);
     try {
-      const rooms = await Room.findAll()
-      expect(rooms.length).toBeDefined()
+      const rooms = await Room.findAll();
+      expect(rooms.length).toBeDefined();
     } catch (e) {
-      console.log(e)
-      throw e
+      console.log(e);
+      throw e;
     }
-  })
-  return 
-})
+  });
+  return;
+});
 
 // Spot.findAll()
-describe('Spot entity', () => {
-  it('should return all the rooms', async () => {
+describe("Spot entity", () => {
+  it("should return all the rooms", async () => {
     expect.assertions(1);
     try {
-      const spots = await Spot.findAll()
-      expect(spots.length).toBeDefined()
+      const spots = await Spot.findAll();
+      expect(spots.length).toBeDefined();
     } catch (e) {
-      console.log(e)
-      throw e
+      console.log(e);
+      throw e;
     }
-  })
-  return 
-})
+  });
+  return;
+});
 
 // let token = "";
 
@@ -95,7 +95,7 @@ describe('Spot entity', () => {
 //   it("should return a 200 status when user connected", async () => {
 //     await request(app)
 //       .get("/api/users")
-//       .set("Authorization", token) 
+//       .set("Authorization", token)
 //       .expect("Content-Type", /json/)
 //       .expect(200);
 //   });

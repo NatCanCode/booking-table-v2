@@ -1,25 +1,28 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../config/config.json')['development'];
+const { Sequelize, DataTypes } = require("sequelize");
+const config = require("../config/config.json")["development"];
 // const { User } = require("../db.js"); // Error: "Identifier User has already been declared"
 const { isAdmin } = require("./isAdmin.js");
 
-const sequelize = new Sequelize(config.database, config.username, config.password, {
+const sequelize = new Sequelize(
+  config.database,
+  config.username,
+  config.password,
+  {
     host: config.host,
-    dialect: config.dialect
-});
-const User = require('../models/user')(
-    sequelize, DataTypes
+    dialect: config.dialect,
+  },
 );
+const User = require("../models/user")(sequelize, DataTypes);
 
 /* GET */ // Only admin can have access to the list of all users
 router.get("/", isAdmin, async (req, res, next) => {
   try {
-      const users = await User.findAll();
-      res.json({ users });
+    const users = await User.findAll();
+    res.json({ users });
   } catch (error) {
-      next(error);
+    next(error);
   }
 });
 
@@ -36,8 +39,8 @@ router.post("/", async (req, res, next) => {
       return res.status(400).json({ error: "Email already exists" });
     }
 
-   // Create a new user with data from the request body
-  const user = await User.create(req.body);
+    // Create a new user with data from the request body
+    const user = await User.create(req.body);
 
     res.json({ message: user });
   } catch (error) {
@@ -66,8 +69,8 @@ router.put("/:userId", async (req, res, next) => {
     if (req.body.password) {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(req.body.password, salt);
-      
-      user.password = hashedPassword;  
+
+      user.password = hashedPassword;
     }
 
     await user.save();
@@ -79,12 +82,11 @@ router.put("/:userId", async (req, res, next) => {
   }
 });
 
-
 /* DELETE */
 router.delete("/:userId", async (req, res, next) => {
   try {
     // Get the user ID from the URL
-    const userId = req.params.userId; 
+    const userId = req.params.userId;
     const user = await User.findByPk(userId);
 
     if (!user) {
@@ -115,85 +117,85 @@ router.delete("/:userId", async (req, res, next) => {
 
 /* GET current user */
 router.get("/me", async (req, res, next) => {
-    try {
-        const userID = req.user.id;
-        // Find the user by ID
-        const currentUser = await User.findByPk(userID);
+  try {
+    const userID = req.user.id;
+    // Find the user by ID
+    const currentUser = await User.findByPk(userID);
 
-        if (!currentUser) {
-        return res.status(400).json({ error: "User not found" });
-        }
-
-        // User found, send the user data in the response
-        res.status(200).json({ currentUser });
-    } catch (error) {
-        next(error);
+    if (!currentUser) {
+      return res.status(400).json({ error: "User not found" });
     }
+
+    // User found, send the user data in the response
+    res.status(200).json({ currentUser });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* GET all users with admin role */
 router.get("/admin", async (req, res, next) => {
-    try {
-        // Find all user with admin role
-        const admin = await User.findAll({
-            where: {
-                role: "admin",
-            },
-        });
-        res.status(200).json({ admin });
-    } catch (error) {
-        next(error);
-    }
+  try {
+    // Find all user with admin role
+    const admin = await User.findAll({
+      where: {
+        role: "admin",
+      },
+    });
+    res.status(200).json({ admin });
+  } catch (error) {
+    next(error);
+  }
 });
 
 // Dina's code 2/2
 // Route for updating user details, accessible by the authenticated user
 router.put("/edit", async (req, res, next) => {
-    try {
-        const { firstName, lastName, email, phoneNumber } = req.body;
+  try {
+    const { firstName, lastName, email, phoneNumber } = req.body;
 
-        let user = await User.findByPk(req.user.id);
+    let user = await User.findByPk(req.user.id);
 
-        if (!user) {
-        return res.status(404).json({ error: `User with id:${id} not found` });
-        }
-
-        // Update the user attributes
-        user.firstName = firstName;
-        user.lastName = lastName;
-        user.email = email;
-        user.phoneNumber = phoneNumber;
-
-        await user.save();
-
-        res.json({ message: "User profile updated we are here" });
-    } catch (error) {
-    next(error);
+    if (!user) {
+      return res.status(404).json({ error: `User with id:${id} not found` });
     }
+
+    // Update the user attributes
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.email = email;
+    user.phoneNumber = phoneNumber;
+
+    await user.save();
+
+    res.json({ message: "User profile updated we are here" });
+  } catch (error) {
+    next(error);
+  }
 });
 
 // Route for updating user's role, accessible by the admin only
 // Only admin users can have access to all users
 router.put("/isAdmin/:id", isAdmin, async (req, res, next) => {
-    try {
-        const { id } = req.params;
-        const { role } = req.body;
+  try {
+    const { id } = req.params;
+    const { role } = req.body;
 
-        let user = await User.findByPk(id);
+    let user = await User.findByPk(id);
 
-        if (!user) {
-            return res.status(404).json({ error: `User with id:${id} not found` });
-        }
-
-        // Update the user's role
-        user.role = role;
-
-        await user.save();
-
-        res.json({ message: "User's role updated successfully" });
-    } catch (error) {
-        next(error);
+    if (!user) {
+      return res.status(404).json({ error: `User with id:${id} not found` });
     }
+
+    // Update the user's role
+    user.role = role;
+
+    await user.save();
+
+    res.json({ message: "User's role updated successfully" });
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;
