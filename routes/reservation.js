@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Sequelize, DataTypes } = require('sequelize');
 const config = require('../config/config.json')['development'];
+const { isAdmin } = require("./isAdmin.js");
 
 const sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
@@ -12,7 +13,7 @@ const Reservation = require('../models/reservation')(
 );
 
 /* GET */
-router.get('/', async (req, res, next) => {
+router.get('/', isAdmin, async (req, res, next) => {
     try {
         const reservations = await Reservation.findAll(); // Test findAll()
         res.json({ reservations });

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Sequelize, DataTypes } = require('sequelize');
 const config = require('../config/config.json')['development'];
+const { isAdmin } = require("./isAdmin.js");
 
 const sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
@@ -12,7 +13,7 @@ const Room = require('../models/room')(
 );
 
 /* GET Room */
-router.get("/", async (req, res, next) => {
+router.get("/", isAdmin, async (req, res, next) => {
     const rooms = await Room.findAll();
     res.json({ rooms });
 });
