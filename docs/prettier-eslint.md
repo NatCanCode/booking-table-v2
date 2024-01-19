@@ -37,6 +37,9 @@ npx eslint folder/file
 ```
 npx eslint routes/reservation.js
 ```
+| TERMINAL           | 
+:-------------------:|
+| <img width="655" alt="Screenshot 2024-01-19 at 18 26 41" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/c57bdcfb-1627-4ed6-a8f8-d528a70b8596"> |
 
 ### You can view all the CLI options by running:
 ```
