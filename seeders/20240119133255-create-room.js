@@ -3,8 +3,10 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-      queryInterface.bulkInsert('Rooms', [{
+    await queryInterface.bulkInsert('Rooms', [{
         name: "White room",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       }],
     {});
   },
