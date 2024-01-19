@@ -142,6 +142,9 @@ npx prettier . --write
 ```
 npm init @eslint/config
 ```
+| TERMINAL           | 
+:-------------------:|
+| <img width="661" alt="ESLintConfig" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/91377a1c-ccec-434a-a4c7-be65573b2405"> |
 
 ### Add rules to the eslintrc.json file:
 ```
