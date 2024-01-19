@@ -12,16 +12,28 @@ const User = require('../models/user')(
     sequelize, DataTypes
 );
 
+// Middleware to check if user is admin
+const isAdmin = (req, res, next) => {
+  console.log("User:", req.user);
+  if (req.user && req.user.role === "admin") {
+      next(); // user is admin, allow access
+  } else {
+      res.status(403).json({
+          message: "Access denied. Only administrators have access to these resources.",
+      });
+  }
+};
+
 /* GET */
-router.get('/', async (req, res, next) => {
-    try {
-        const users = await User.findAll();
-        res.json({ users });
-    } catch (error) {
-        next(error);
-    }
-//  res.json({ message: "Hello, get user!" });
-});
+// router.get('/', async (req, res, next) => {
+//     try {
+//         const users = await User.findAll();
+//         res.json({ users });
+//     } catch (error) {
+//         next(error);
+//     }
+// //  res.json({ message: "Hello, get user!" });
+// });
 
 /* Post User */
 router.post("/", async (req, res, next) => {
@@ -100,18 +112,18 @@ router.delete("/:userId", async (req, res, next) => {
   }
 });
 
-// Dina's code 1/2
-// Middleware to check if user is admin
-const isAdmin = (req, res, next) => {
-    console.log("User:", req.user);
-    if (req.user && req.user.role === "admin") {
-        next(); // user is admin, allow access
-    } else {
-        res.status(403).json({
-            message: "Access denied. Only administrators have access to these resources.",
-        });
-    }
-};
+// // Dina's code 1/2
+// // Middleware to check if user is admin
+// const isAdmin = (req, res, next) => {
+//     console.log("User:", req.user);
+//     if (req.user && req.user.role === "admin") {
+//         next(); // user is admin, allow access
+//     } else {
+//         res.status(403).json({
+//             message: "Access denied. Only administrators have access to these resources.",
+//         });
+//     }
+// };
 
 /* GET */ //only admin can have access to the list of all users
 router.get("/", isAdmin, async (req, res, next) => {

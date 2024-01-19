@@ -10,7 +10,7 @@ router.post('/signup', async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     const { role, firstName, lastName, email, phoneNumber } = req.body
     const user = { 
-        role,
+        role: "client",
         firstName,
         lastName,
         email,
@@ -43,6 +43,45 @@ router.post('/signin', async (req, res) => {
     };
     const token = jwt.sign(payload, SECRET_KEY, { expiresIn: '1h' });
     res.json({message: token});
+});
+
+// Password reset
+router.post('/reset-password', async (req, res) => {
+  try {
+    const { email, newPassword } = req.body;
+
+      // Validation de base
+      if (!email || !newPassword) {
+        return res.status(400).json({ error: 'Email and new password are required' });
+      }
+
+    // Recherche de l'utilisateur par email
+    const user = await User.findOne({ where: { email: email } });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Hachage du nouveau mot de passe
+    const salt = await bcrypt.genSalt(10);
+    console.log('Salt generated successfully');
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+    console.log('Password hashed successfully');
+
+    // Mise à jour du mot de passe dans la base de données
+    console.log('Before saving:', user.password);
+    user.password = hashedPassword;
+    await user.save();
+    console.log('After saving:', user.password);
+  
+
+    // Répondez avec un message de succès
+    res.json({ message: 'Password reset successfully' });
+  } catch (error) {
+    // Gérez les erreurs qui pourraient survenir pendant le processus de réinitialisation
+    console.error(error);
+    res.status(500).json({ error: 'Password reset error' });
+  }
 });
 
 module.exports = router;
