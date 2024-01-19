@@ -69,7 +69,35 @@ node --watch
 | <img width="1440" alt="Screenshot 2023-11-02 at 09 30 12" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/1886f7ca-2527-4f4c-aacd-8cba398dc162"> | <img width="1440" alt="Screenshot 2023-10-31 at 19 14 06" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/16414961-8f2a-4b25-820c-d460c61a979c"> |  |  | 
 
 
+--------------------------------------------------------------------------------------------------------------
 
+### Implement seed data using this resource can help: https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350
+
+### Create seed files using:
+```
+sequelize seed:generate --name create-reservation
+```
+```
+sequelize seed:generate --name create-room
+```
+```
+sequelize seed:generate --name create-spot
+```
+```
+sequelize seed:generate --name create-user
+```
+
+### Then run the seeder:
+```
+sequelize db:seed:all
+```
+And, if needed:
+```
+sequelize db:seed:all --help
+```
+### Now go to your database (here TablePlus), refresh and check whether the seeds have been added.
+
+--------------------------------------------------------------------------------------------------------------
 
 ### Install Prettier by running:
 ```
@@ -115,8 +143,7 @@ npx eslint routes/reservation.js
 ```
 npx eslint -h
 ```
-
-
+--------------------------------------------------------------------------------------------------------------
 
 ### Next steps:
 - [ ]  Design the front end
