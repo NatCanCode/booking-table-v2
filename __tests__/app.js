@@ -81,13 +81,13 @@ describe('Spot entity', () => {
 //   const signInResponse = await request(app)
 //     .post("/auth/signin")
 //     .send({
-//       email: "dina@exampleEmail.com",
-//       password: "examplePassword",
+//       email: "client@gmail.com",
+//       password: "1234",
 //     })
 //     .expect("Content-Type", /json/)
 //     .expect(200);
 
-//   // Extract the token from the response
+//   // Extract token from the response
 //   token = signInResponse.body.jwt;
 // });
 
