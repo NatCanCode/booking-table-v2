@@ -23,6 +23,8 @@
 ## Resources:
 - [x]  [Node.js](https://nodejs.org/api/)
 - [x]  [Express](https://expressjs.com/en/5x/api.html)
+- [x]  [Seed data](https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350)
+- [x]  [ESLint](https://eslint.org/docs/latest/use/getting-started)
 
 
 ## Database:
@@ -70,9 +72,9 @@ node --watch
 
 
 --------------------------------------------------------------------------------------------------------------
+## Seeders
 
-### Implement seed data to populate the database:
-This resource can help: https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350
+### Implement [seed data](https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350) to populate the database:
 
 ### Create seed files using:
 ```
@@ -131,14 +133,14 @@ sequelize db:seed:all --help
 | <img width="1229" alt="Screenshot 2024-01-19 at 18 39 54" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/238b3b67-3c8a-484e-91de-2778e8490183"> |
 
 --------------------------------------------------------------------------------------------------------------
+## ESLINT
 
 ### Install Prettier by running:
 ```
 npx prettier . --write
 ```
 
-### Then install ESLint following the official documentation https://eslint.org/docs/latest/use/getting-started
-### Run:
+### Install [ESLint](https://eslint.org/docs/latest/use/getting-started) by running:
 ```
 npm init @eslint/config
 ```
