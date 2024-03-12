@@ -1,4 +1,5 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
 const router = express.Router();
 const { Sequelize, DataTypes } = require('sequelize');
 const config = require('../config/config.json')['development'];
@@ -146,14 +147,16 @@ router.get("/admin", async (req, res, next) => {
 });
 
 // PUT Route for updating user details, accessible by the authenticated user
-router.put("/edit", async (req, res, next) => {
-    try {
-        const { firstName, lastName, email, phoneNumber } = req.body;
-
-        let user = await User.findByPk(req.user.id);
+router.put("/edit/:id", async (req, res, next) => {
+    // try {
+        const { firstName, lastName, email, phoneNumber, password } = req.body;
+        // console.log("BODY: ", req.body)
+        
+        let user = await User.findOne({ where: { id: req.params.id }});
+        // console.log("USER: ", user)
 
         if (!user) {
-        return res.status(404).json({ error: `User with id:${id} not found` });
+        return res.status(404).json({ error: `User with id:${req.params.id} not found` });
         }
 
         // Update the user attributes
@@ -172,9 +175,10 @@ router.put("/edit", async (req, res, next) => {
         await user.save();
 
         res.json({ message: "User profile updated successfully" });
-    } catch (error) {
-    next(error);
-    }
+    // } 
+    // catch (error) {
+    // next(error);
+    // }
 });
 
 // Route for updating user's role, accessible by the admin only
