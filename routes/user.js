@@ -100,7 +100,6 @@ router.delete("/:userId", async (req, res, next) => {
   }
 });
 
-// // Dina's code 1/2
 // // Middleware to check if user is admin
 // const isAdmin = (req, res, next) => {
 //     console.log("User:", req.user);
@@ -146,8 +145,7 @@ router.get("/admin", async (req, res, next) => {
     }
 });
 
-// Dina's code 2/2
-// Route for updating user details, accessible by the authenticated user
+// PUT Route for updating user details, accessible by the authenticated user
 router.put("/edit", async (req, res, next) => {
     try {
         const { firstName, lastName, email, phoneNumber } = req.body;
@@ -164,9 +162,16 @@ router.put("/edit", async (req, res, next) => {
         user.email = email;
         user.phoneNumber = phoneNumber;
 
+        // Update password
+        if (password) {
+          const salt = await bcrypt.genSalt(10);
+          const hashedPassword = await bcrypt.hash(password, salt);
+          user.password = hashedPassword;
+      }
+
         await user.save();
 
-        res.json({ message: "User profile updated we are here" });
+        res.json({ message: "User profile updated successfully" });
     } catch (error) {
     next(error);
     }

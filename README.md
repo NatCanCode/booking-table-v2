@@ -23,6 +23,8 @@
 ## Resources:
 - [x]  [Node.js](https://nodejs.org/api/)
 - [x]  [Express](https://expressjs.com/en/5x/api.html)
+- [x]  [Seed data](https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350)
+- [x]  [ESLint](https://eslint.org/docs/latest/use/getting-started)
 
 
 ## Database:
@@ -35,28 +37,28 @@
 
 ## Command lines
 ### Install Node.js:
-```
+```bash
 brew install node@20 (version 20)
 ```
-```
+```bash
 brew link node@20
 ```
 
 ### Install Express:
-```
+```bash
 npm install express-generator -g
 ```
-```
+```bash
 npx express project-name --no-view
 ```
 
 ### Launch the server after updates:
-```
+```bash
 npm run start
 ```
 
 ### Automaticaly launch the server after every update:
-```
+```bash
 node --watch
 ```
 
@@ -69,26 +71,28 @@ node --watch
 | <img width="1440" alt="Screenshot 2023-11-02 at 09 30 12" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/1886f7ca-2527-4f4c-aacd-8cba398dc162"> | <img width="1440" alt="Screenshot 2023-10-31 at 19 14 06" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/16414961-8f2a-4b25-820c-d460c61a979c"> |  |  | 
 
 
---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
+## Seeders
 
 ### Implement seed data to populate the database:
 This resource can help: https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350
 
 ### Create seed files using:
-```
+```bash
 sequelize seed:generate --name create-reservation
 ```
-```
+```bash
 sequelize seed:generate --name create-room
 ```
-```
+```bash
 sequelize seed:generate --name create-spot
 ```
-```
+```bash
 sequelize seed:generate --name create-user
 ```
 ### Update each seeder file checking your model syntax with:
-```
+```js
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
@@ -114,7 +118,7 @@ await queryInterface.bulkDelete('Reservations', null, {});
 ```
 
 ### Then run the seeder:
-```
+```bash
 sequelize db:seed:all
 ```
 | TERMINAL           | 
@@ -122,7 +126,7 @@ sequelize db:seed:all
 | <img width="655" alt="Screenshot 2024-01-19 at 18 26 41" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/c57bdcfb-1627-4ed6-a8f8-d528a70b8596"> |
 
 And, if needed:
-```
+```bash
 sequelize db:seed:all --help
 ```
 ### Now go to your database (here TablePlus), refresh and check whether the seeds have been added:
@@ -130,16 +134,17 @@ sequelize db:seed:all --help
 :-------------------:|
 | <img width="1229" alt="Screenshot 2024-01-19 at 18 39 54" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/238b3b67-3c8a-484e-91de-2778e8490183"> |
 
---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
+## Prettier & ESLint
 
 ### Install Prettier by running:
-```
+```bash
 npx prettier . --write
 ```
 
-### Then install ESLint following the official documentation https://eslint.org/docs/latest/use/getting-started
-### Run:
-```
+### Install [ESLint](https://eslint.org/docs/latest/use/getting-started) by running:
+```bash
 npm init @eslint/config
 ```
 | TERMINAL           | 
@@ -147,7 +152,7 @@ npm init @eslint/config
 | <img width="661" alt="ESLintConfig" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/91377a1c-ccec-434a-a4c7-be65573b2405"> |
 
 ### Add rules to the eslintrc.json file:
-```
+```js
 "rules": {
     "semi": ["error", "always"],
     "quotes": ["error", "double"]
@@ -159,7 +164,7 @@ The first value is the error level of the rule and can be one of these values:
 "error" or 2 - turn the rule on as an error (exit code will be 1)
 
 ### Add this other rule to the eslintrc.json file:
-```
+```js
 {
     "extends": "eslint:recommended"
 }
@@ -168,20 +173,20 @@ All the rules marked “recommended” on the rules page will be turned on.
 Alternatively, you can use configurations that others have created by searching for “eslint-config” on https://www.npmjs.com/search?q=eslint-config 
 
 ### Test individual file by running:
-```
+```bash
 npx eslint folder/file
 ```
-```
+```bash
 npx eslint routes/reservation.js
 ```
 
 ### You can view all the CLI options by running:
-```
+```bash
 npx eslint -h
 ```
---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
-### Next steps:
+## Next steps:
 - [ ]  Design the front end
 - [ ]  Code the front end
 - [ ]  Link back and front end

@@ -5,8 +5,7 @@
 npx prettier . --write
 ```
 
-### Then install ESLint following the official documentation https://eslint.org/docs/latest/use/getting-started
-### Run:
+### Install [ESLint](https://eslint.org/docs/latest/use/getting-started) by running:
 ```bash
 npm init @eslint/config
 ```

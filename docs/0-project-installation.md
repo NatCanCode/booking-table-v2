@@ -1,8 +1,8 @@
-## MyBackend project
+## Project installation
 
 Consider that only the code on GitHub is up to date.
 
-### Installation procedure
+### Installation procedure:
 
 Download it with the following commands:
 ```bash

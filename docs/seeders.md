@@ -1,7 +1,6 @@
 ## Seeders
 
-### Implement seed data to populate the database:
-This resource can help: https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350
+### Implement [seed data](https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350) to populate the database
 
 ### Create seed files using:
 ```bash
