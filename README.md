@@ -75,8 +75,7 @@ node --watch
 
 ## Seeders
 
-### Implement seed data to populate the database:
-This resource can help: https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350
+### Implement [seed data](https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350) to populate the database:
 
 ### Create seed files using:
 ```bash
@@ -133,8 +132,6 @@ sequelize db:seed:all --help
 | TABLEPLUS DATABASE | 
 :-------------------:|
 | <img width="1229" alt="Screenshot 2024-01-19 at 18 39 54" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/238b3b67-3c8a-484e-91de-2778e8490183"> |
-
--------------------------------------------------------------------------------------------------
 
 ## Prettier & ESLint
 
