@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const roomController = require('../controllers/roomController');
-const { isAdmin } = require("./isAdmin.js");
+const isAdmin = require("./isAdmin.js");
 
 // GET all rooms
 router.get('/', isAdmin, roomController.getAllRooms);

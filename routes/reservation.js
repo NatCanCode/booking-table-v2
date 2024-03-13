@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const reservationController = require('../controllers/reservationController');
-const { isAdmin } = require("./isAdmin.js");
+const isAdmin = require("./isAdmin.js");
 
 // GET all reservations
 router.get('/', isAdmin, reservationController.getAllReservations);

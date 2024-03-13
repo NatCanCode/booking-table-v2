@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
-const { isAdmin } = require("./isAdmin.js");
+const isAdmin = require("./isAdmin.js");
 
 // GET all users (accessible only by admin)
 router.get('/', isAdmin, userController.getAllUsers);

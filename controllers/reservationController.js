@@ -24,7 +24,7 @@ async function createReservation(req, res, next) {
     try {
         const { spotId, date, name, note, status, userId, roomId } = req.body;
 
-        // ... (votre logique existante)
+        const reservation = Reservation.create({ date, name, note, status, userId, spotId, roomId })
 
         res.json({ reservation });
     } catch (error) {
