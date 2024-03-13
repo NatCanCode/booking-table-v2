@@ -17,44 +17,44 @@
 
 | Tâches                                        | Statut | Validation |
 | --------------------------------------------- | ------ | ---------- |
-| Les implementations du code sont fonctionnels | ❌     |            |
+| Les implementations du code sont fonctionnels | ✅     |            |
 
 ## Structure
 
 | Tâches       | Statut | Validation |
 | ------------ | ------ | ---------- |
-| Route        | ❌     |            |
-| Controller   | ❌     |            |
+| Route        | ✅     |            |
+| Controller   | 🟠     |            |
 | 🔜 Services | ❌     |            |
 
 ## POO
 
 | Tâches                   | Statut | Validation |
 | ------------------------ | ------ | ---------- |
-| 🔜 Classe               | ❌     |            |
-| 🔜 Bonnes pratiques POO | ❌     |            |
+| 🔜 Classe               | ✅     |            |
+| 🔜 Bonnes pratiques POO | ✅     |            |
 
 ## Sécurité
 
 | Tâches              | Statut | Validation |
 | ------------------- | ------ | ---------- |
-| Authentification    | ❌     |            |
-| Authorisation       | ❌     |            |
-| Sign in             | ❌     |            |
-| Sign up             | ❌     |            |
-| bcrypt              | ❌     |            |
-| jwt                 | ❌     |            |
+| Authentification    | ✅     |            |
+| Authorisation       | ✅     |            |
+| Sign in             | ✅     |            |
+| Sign up             | ✅     |            |
+| bcrypt              | ✅     |            |
+| jwt                 | ✅     |            |
 | Mot de passe oublié | ❌     |            |
 
 ## Outils, méthodes et docs
 
 | Tâches                                                  | Statut | Validation |
 | ------------------------------------------------------- | ------ | ---------- |
-| POSTMAN                                                 | ❌     |            |
-| 🔜 Validation des données (express validator)          | ❌     |            |
-| 🔜 Purification des données (JOI)                      | ❌     |            |
-| 🔜 Mise en place des logs (morgan et autre winston)    | ❌     |            |
-| 🔜 Schema bdd / schema du projet / explication du code | ❌     |            |
-| 🔜 5 sources de veille                                 | ❌     |            |
-| 🔜 Explication d’un concept                            | ❌     |            |
-| 🔜 Dossier type d'une démarche de travail              | ❌     |            |
+| POSTMAN                                                 | ✅      |            |
+| 🔜 Validation des données (express validator)            | ✅     |            |
+| 🔜 Purification des données (JOI)                        | ❌     |            |
+| 🔜 Mise en place des logs (morgan et autre winston)      | ❌     |            |
+| 🔜 Schema bdd / schema du projet / explication du code  | ❌     |            |
+| 🔜 5 sources de veille                                   | ❌     |            |
+| 🔜 Explication d’un concept                              | ❌     |            |
+| 🔜 Dossier type d'une démarche de travail                | ❌     |            |
