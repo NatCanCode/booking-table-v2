@@ -6,8 +6,8 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
     host: config.host,
     dialect: config.dialect
 });
-const User = require('../models/user')(sequelize, DataTypes);
-const { isAdmin } = require("../routes/isAdmin.js");
+const User = require('../models/userModel.js')(sequelize, DataTypes);
+const { isAdmin } = require("../routes/isAdminRoute.js");
 
 // GET all users (accessible only by admin)
 async function getAllUsers(req, res, next) {

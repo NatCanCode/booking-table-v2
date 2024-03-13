@@ -5,9 +5,9 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
     host: config.host,
     dialect: config.dialect
 });
-const Spot = require('../models/spot')(sequelize, DataTypes);
+const Spot = require('../models/spotModel.js')(sequelize, DataTypes);
 
-const isAdmin = require("../routes/isAdmin.js");
+const isAdmin = require("../routes/isAdminRoute.js");
 
 // GET all spots
 async function getAllSpots(req, res, next) {

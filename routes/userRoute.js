@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userController');
-const isAdmin = require("./isAdmin.js");
+const userController = require('../controllers/userController.js');
+const isAdmin = require("./isAdminRoute.js");
 
 // GET all users (accessible only by admin)
 router.get('/', isAdmin, userController.getAllUsers);
@@ -99,7 +99,6 @@ module.exports = router;
 //     if (req.body.password) {
 //       const salt = await bcrypt.genSalt(10);
 //       const hashedPassword = await bcrypt.hash(req.body.password, salt);
-      
 //       user.password = hashedPassword;  
 //     }
 

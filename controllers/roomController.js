@@ -5,9 +5,9 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
     host: config.host,
     dialect: config.dialect
 });
-const Room = require('../models/room.js')(sequelize, DataTypes);
+const Room = require('../models/roomModel.js')(sequelize, DataTypes);
 
-const isAdmin = require("../routes/isAdmin.js");
+const isAdmin = require("../routes/isAdminRoute.js");
 
 // GET all rooms
 async function getAllRooms(req, res, next) {

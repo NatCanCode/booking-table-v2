@@ -7,10 +7,10 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
   dialect: config.dialect
 });
 
-const Reservation = require('./models/reservation')( sequelize, DataTypes );
-const Room = require('./models/room')( sequelize, DataTypes );
-const Spot = require('./models/spot')( sequelize, DataTypes );
-const User = require('./models/user')( sequelize, DataTypes );
+const Reservation = require('./models/reservationModel')( sequelize, DataTypes );
+const Room = require('./models/roomModel')( sequelize, DataTypes );
+const Spot = require('./models/spotModel')( sequelize, DataTypes );
+const User = require('./models/userModel')( sequelize, DataTypes );
 
 module.exports = {
     Reservation,

@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const reservationRouter = require('./reservation');
-const roomRouter = require('./room');
-const spotRouter = require('./spot');
-const userRouter = require('./user');
+const reservationRouter = require('./reservationRoute');
+const roomRouter = require('./roomRoute');
+const spotRouter = require('./spotRoute');
+const userRouter = require('./userRoute');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

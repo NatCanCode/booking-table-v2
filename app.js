@@ -2,9 +2,9 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/indexRoute');
 const app = express();
-const authRouter = require('./routes/auth');
+const authRouter = require('./routes/authRoute');
 const jwt = require('jsonwebtoken');
 
 // Middlewares (code executed between req and res)
