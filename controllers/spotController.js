@@ -19,7 +19,7 @@ async function getAllSpots(req, res, next) {
     }
 }
 
-// POST Create Spot
+// POST create spot
 async function createSpot(req, res, next) {
     try {
         const { name } = req.body;
@@ -37,7 +37,7 @@ async function createSpot(req, res, next) {
     }
 }
 
-// PUT Update Spot
+// PUT update spot
 async function updateSpot(req, res, next) {
     const spotId = req.params.spotId;
     const { name } = req.body;
@@ -59,7 +59,7 @@ async function updateSpot(req, res, next) {
     }
 }
 
-// DELETE Spot
+// DELETE spot
 async function deleteSpot(req, res, next) {
     const spotId = req.params.spotId;
 
