@@ -7,6 +7,12 @@ const authRouter = require('./routes/authRoute');
 const jwt = require('jsonwebtoken');
 const morganMiddleware = require("./middlewares/morganMiddleware");
 const logger = require("./utils/logger");
+const cors = require('cors');
+
+corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200
+}
 
 // Middlewares (code executed between req and res)
 app.use(morganMiddleware);
@@ -14,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors(corsOptions));
 
 logger.http('Debut session');
 

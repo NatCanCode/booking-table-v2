@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const spotController = require('../controllers/spotController.js');
-const isAdmin = require("./isAdminRoute.js");
+const isAdmin = require("../controllers/isAdminController.js");
 
 // GET all spots
 router.get('/', isAdmin, spotController.getAllSpots);

@@ -1,13 +1,13 @@
-const express = require('express');
-const router = express.Router();
-const isAdminController = require('../controllers/isAdminController');
+// const express = require('express');
+// const router = express.Router();
+// const isAdminController = require('../controllers/isAdminController');
 
-// Example usage in a route
-router.get('/', isAdminController, (req, res) => {
-    res.json({ message: "This route is accessible only to admins." });
-});
+// // Example usage in a route
+// router.get('/', isAdminController, (req, res) => {
+//     // res.json({ message: "This route is accessible only to admins." });
+// });
 
-module.exports = router;
+// module.exports = router;
 
 
 // const isAdmin = (req, res, next) => {
