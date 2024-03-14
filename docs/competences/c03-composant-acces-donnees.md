@@ -20,7 +20,7 @@
 | --------------------------------------------------------------- | ------- | ---- |
 | Création des dossiers et fichiers Routes (User, Room, Spot...)  | ✅     |      |
 | Création des dossiers et fichiers Modèles (User, Room, Spot...) | ✅     |      |
-| Mise en place des contrôleurs (User, Room, Spot...)             | 🟠     |      |
+| Mise en place des contrôleurs (User, Room, Spot...)             | ✅     |      |
 | 🔜 Implémenter les services                                     | ❌      |      |
 
 ## Sécurité
