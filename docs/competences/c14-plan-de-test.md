@@ -18,7 +18,7 @@
 
 | Tâche                                 | Validée | Lien vers le fichier/ligne de code |
 | ------------------------------------- | :-----: | ---------------------------------- |
-| 🔜 Élaboration de la matrice de test |   ✅    |                                    |
+| 🔜 Élaboration de la matrice de test |   ❌    |                                    |
 
 ## Tests
 

@@ -34,28 +34,28 @@
 ## Validation des données
 
 | Tâche                                                           | Validée | Lien |
-| --------------------------------------------------------------- | ------- | ---- |
-| 🔜 Intégrer express-validator pour la validation des données    | ❌      |      |
-| 🔜 Nettoyer les données entrantes pour prévenir les injections  | ❌      |      |
-| Établir une nomenclature cohérente pour le code                 | ❌      |      |
-| Commenter et expliquer les segments de code complexes           | ❌      |      |
+| --------------------------------------------------------------- | ----- | ---- |
+| 🔜 Intégrer express-validator pour la validation des données    | ❌     |      |
+| 🔜 Nettoyer les données entrantes pour prévenir les injections  | ❌     |      |
+| Établir une nomenclature cohérente pour le code                 | ✅     |      |
+| Commenter et expliquer les segments de code complexes           | 🟠     |      |
 
 ## Base de données
 
 | Tâche                                                | Validée | Lien |
 | ---------------------------------------------------- | ------- | ---- |
 | 🔜 Concevoir le schéma de base de données            | ✅       |      |
-| Créer les tables et relations conformément au schéma | ✅       |      |
+| Créer les tables et relations conformément au schéma | ❌       |      |
 
 ## Tests
 
 | Tâche                                                                   | Validée | Lien |
 | ----------------------------------------------------------------------- | ------- | ---- |
-| 🔜 Définir une matrice de test pour couvrir toutes les fonctionnalités | ✅       |      |
+| 🔜 Définir une matrice de test pour couvrir toutes les fonctionnalités | ❌       |      |
 | 🔜 Implémenter les tests unitaires et d'intégration                    | 🟠       |      |
 
 ## Documentation API
 
 | Tâche                                               | Validée | Lien |
 | --------------------------------------------------- | ------- | ---- |
-| 🔜 Préparer la documentation de l'API avec Swagger  | 🟠      |      |
+| 🔜 Préparer la documentation de l'API avec Swagger  | ❌      |      |

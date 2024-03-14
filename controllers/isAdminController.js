@@ -1,4 +1,3 @@
-// isAdminController.js
 const isAdmin = (req, res, next) => {
     console.log("User:", req.user);
     if (req.user && req.user.role === "admin") {

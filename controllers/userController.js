@@ -1,4 +1,3 @@
-// userController.js
 const bcrypt = require('bcrypt');
 const { Sequelize, DataTypes } = require('sequelize');
 const config = require('../config/config.json')['development'];
