@@ -1,18 +1,21 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 const indexRouter = require('./routes/indexRoute');
 const app = express();
 const authRouter = require('./routes/authRoute');
 const jwt = require('jsonwebtoken');
+const morganMiddleware = require("./middlewares/morganMiddleware");
+const logger = require("./utils/logger");
 
 // Middlewares (code executed between req and res)
-app.use(logger('dev'));
+app.use(morganMiddleware);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+logger.http('Debut session');
 
 const verifyJWT = (req, res, next) => {
   const SECRET_KEY = "secretkey23456"; // A remplacer par la même clé secrète que dans la route signin dans fichier auth.js
