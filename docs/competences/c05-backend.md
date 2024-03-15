@@ -24,8 +24,8 @@
 | Tâches       | Statut | Validation |
 | ------------ | ------ | ---------- |
 | Route        | ✅     |            |
-| Controller   | ✅    |            |
-| 🔜 Services | ❌     |            |
+| Controller   | ✅     |            |
+| 🔜 Services  | ❌     |            |
 
 ## POO
 
@@ -44,7 +44,7 @@
 | Sign up             | ✅     |            |
 | bcrypt              | ✅     |            |
 | jwt                 | ✅     |            |
-| Mot de passe oublié |  ✅    |            |
+| Mot de passe oublié | ✅     |            |
 
 ## Outils, méthodes et docs
 
@@ -55,6 +55,6 @@
 | 🔜 Purification des données (JOI)                        | ❌     |            |
 | 🔜 Mise en place des logs (morgan et autre winston)      | ✅     |            |
 | 🔜 Schema bdd / schema du projet / explication du code   | ✅     |            |
-| 🔜 5 sources de veille                                   | ❌     |            |
+| 🔜 5 sources de veille                                   | ✅     |            |
 | 🔜 Explication d’un concept                              | ❌     |            |
 | 🔜 Dossier type d'une démarche de travail                | ❌     |            |
