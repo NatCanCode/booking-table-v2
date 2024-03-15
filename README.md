@@ -21,6 +21,11 @@ npm install
 touch .env
 ```
 
+#### Install .env package:
+```bash
+npm i dotenv
+```
+
 #### Add configurations to the .env file:
 ```bash
 PORT=3000
@@ -29,6 +34,11 @@ USER_DEV=your_user
 PASSWORD_DEV=your_password
 DATABASE_DEV=database_development
 ENVIRONMENT=development
+```
+#### Add configurations to the .gitignore file:
+```bash
+.env
+.env.test
 ```
 
 #### Create the DATABASE with sequelize-cli, migrate the models and seeds:
