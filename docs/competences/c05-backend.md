@@ -44,7 +44,7 @@
 | Sign up             | ✅     |            |
 | bcrypt              | ✅     |            |
 | jwt                 | ✅     |            |
-| Mot de passe oublié | ❌     |            |
+| Mot de passe oublié |  ✅    |            |
 
 ## Outils, méthodes et docs
 

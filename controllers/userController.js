@@ -1,11 +1,5 @@
 const bcrypt = require('bcrypt');
-const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../config/config.json')['development'];
-const sequelize = new Sequelize(config.database, config.username, config.password, {
-    host: config.host,
-    dialect: config.dialect
-});
-const User = require('../models/userModel.js')(sequelize, DataTypes);
+const { User } = require("../db.js")
 const { isAdmin } = require("../routes/isAdminRoute.js");
 
 // GET all users (accessible only by admin)

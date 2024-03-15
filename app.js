@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -45,7 +46,7 @@ const verifyJWT = (req, res, next) => {
 };
 
 // app implements a router plus middlewares (logger, json, url encoded, cookie parser, etc.)
-app.use('/api', verifyJWT, indexRouter); // All routes check verifyJwt but auth
 app.use('/auth', authRouter);
+app.use('/api', verifyJWT, indexRouter); // All routes check verifyJwt but auth
 
 module.exports = app;

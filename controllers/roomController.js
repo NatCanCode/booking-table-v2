@@ -1,11 +1,4 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../config/config.json')['development'];
-const sequelize = new Sequelize(config.database, config.username, config.password, {
-    host: config.host,
-    dialect: config.dialect
-});
-const Room = require('../models/roomModel.js')(sequelize, DataTypes);
-
+const { Room } = require("../db.js")
 const isAdmin = require("../routes/isAdminRoute.js");
 
 // GET all rooms
