@@ -1,6 +1,50 @@
 # booking-table-app
 ### Restaurant table booking app using NodeJS  
 
+## Set up
+### Requirements:
+```bash
+npm
+nodeJS
+```
+
+### Installation command lines
+#### Clone the project and install dependencies:
+```bash
+git clone https://github.com/NatCanCode/booking-table-v2.git
+cd booking-table-v2
+npm install
+```
+
+#### Create the .env file:
+```bash
+touch .env
+```
+
+#### Add configurations to the .env file:
+```bash
+PORT=3000
+HOST_DEV=your_localhost
+USER_DEV=your_user
+PASSWORD_DEV=your_password
+DATABASE_DEV=database_development
+ENVIRONMENT=development
+```
+
+#### Create the DATABASE with sequelize-cli, migrate the models and seeds:
+```bash
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+```
+
+#### Start the server:
+```bash
+npm run start
+```
+
+
+-------------------------------------------------------------------------------------------------
 
 ## Creation of an API using:
 - [x]  Node.js
