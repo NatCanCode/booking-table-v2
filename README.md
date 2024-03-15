@@ -78,6 +78,7 @@ npm run start
 - [x]  [Express](https://expressjs.com/en/5x/api.html)
 - [x]  [Seed data](https://medium.com/@raphaelragul006/node-js-and-sequelize-orm-maintain-seed-data-execution-history-b79341ad350)
 - [x]  [ESLint](https://eslint.org/docs/latest/use/getting-started)
+- [x]  [CRUD & REST APIs](https://nordicapis.com/crud-vs-rest-whats-the-difference/)
 
 
 ## Database:
