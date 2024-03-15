@@ -3,12 +3,11 @@
 
 ## Set up
 ### Requirements:
-```bash
-npm
-nodeJS
-```
+- [x]  npm
+- [x]  nodeJS
 
-### Installation command lines
+
+### Installation using command lines
 #### Clone the project and install dependencies:
 ```bash
 git clone https://github.com/NatCanCode/booking-table-v2.git
