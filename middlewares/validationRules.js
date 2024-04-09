@@ -17,7 +17,7 @@ const signUpValidationRules = () => {
 
 const signInValidationRules = () => {
     return [
-        body('email').isEmail().withMessage('Le format de l\'email est incorrect'),
+        body('email').isEmail().withMessage('Le format de l\'email est incorrect').normalizeEmail({gmail_remove_dots: true}),
         body('password').isLength({ min: 5 }).withMessage('Le mot de passe doit contenir au moins 5 caractères')
     ];
 }
