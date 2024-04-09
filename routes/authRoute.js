@@ -1,15 +1,38 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
+const {signUpValidationRules, signInValidationRules} = require('../middlewares/validationRules');
+const { validationResult } = require('express-validator');
 
 // POST Signup
-router.post('/signup', authController.signup);
+// router.post('/signup', authController.signup);
 
 // POST Signin
-router.post('/signin', authController.signin);
+// router.post('/signin', authController.signin);
 
 // POST Reset password
 router.post('/reset-password', authController.resetPassword);
+
+// Import fonctions signUpValidationRules and signInValidationRules from file authValidationRules.js, and method validationResult from express-validator
+// POST Signup
+router.post('/signup', signUpValidationRules(), async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
+
+    authController.signup(req, res);
+});
+
+// POST Signin
+router.post('/signin', signInValidationRules(), async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
+
+    authController.signin(req, res);
+});
 
 module.exports = router;
 
