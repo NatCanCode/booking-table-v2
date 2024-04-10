@@ -1,4 +1,5 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
@@ -10,11 +11,22 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Spot.belongsTo(models.Room, {foreignKey: 'id_room'});
+      Spot.belongsToMany(models.Reservation, {through: 'ReservationSpots', foreignKey: 'id_spot'});
     }
   }
   Spot.init({
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    id_room: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: {
+          tableName: "Rooms", // Nom du modèle référencé
+        },
+        key: 'id', // Clé dans le modèle référencé
+      },
+    }, 
   }, {
     sequelize,
     modelName: 'Spot',

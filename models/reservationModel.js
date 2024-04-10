@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      Reservation.belongsToMany(models.Spot, { through: 'ReservationSpots', foreignKey: 'id_reservation'});
+     }
   }
   Reservation.init({
     date: DataTypes.DATE,
