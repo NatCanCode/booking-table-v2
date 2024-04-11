@@ -22,6 +22,10 @@ const signInValidationRules = () => {
     ];
 }
 
+// TODO:
+// Reservation validation rules
+// User profile validation rules
+
 // Sanitize with express-validator :
 // normalizeEmail : permet de normaliser l'email, par exemple en enlevant les points dans un email gmail.
 // blacklist : permet de supprimer des caractères spécifiques.
