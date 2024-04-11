@@ -83,10 +83,9 @@ npm run start
 
 ## Database:
 
-| Tables           | SQL            | 
-|:-------------------------:|:-------------------------:
-| <img width="615" alt="tables" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/91894b35-e7f6-4ad0-9050-41741883e508"> | <img width="636" alt="Screenshot 2023-10-31 at 18 39 54" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/99c145cb-ef14-433f-8e96-766a4c6556f8"> |
-
+| Tables           | SQL            | Class Diagram      | 
+|:----------------:|:--------------:|:-------------------:
+| <img width="615" alt="tables" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/91894b35-e7f6-4ad0-9050-41741883e508"> | <img width="636" alt="Screenshot 2023-10-31 at 18 39 54" src="https://github.com/NatCanCode/booking-table-v2/assets/77299658/99c145cb-ef14-433f-8e96-766a4c6556f8"> |![gleek-IQVVXnSKgOoezP-noKn5bg](https://github.com/NatCanCode/booking-table-v2/assets/77299658/d9673593-0925-4379-a84b-1bbfedd2e283)|
 
 ## Command lines
 ### Install Node.js:
