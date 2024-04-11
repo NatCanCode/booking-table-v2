@@ -13,24 +13,24 @@ async function getAllUsers(req, res, next) {
 }
 
 // POST create user
-async function createUser(req, res, next) {
-    try {
-        const existingUser = await User.findOne({
-            where: { email: req.body.email },
-        });
+// async function createUser(req, res, next) {
+//     try {
+//         const existingUser = await User.findOne({
+//             where: { email: req.body.email },
+//         });
 
-        if (existingUser) {
-            return res.status(400).json({ error: "Email already exists" });
-        }
+//         if (existingUser) {
+//             return res.status(400).json({ error: "Email already exists" });
+//         }
 
-        const user = await User.create(req.body);
-        res.json({ message: user });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "An error occurred while creating the user." });
-        next(error);
-    }
-}
+//         const user = await User.create(req.body);
+//         res.json({ message: user });
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ error: "An error occurred while creating the user." });
+//         next(error);
+//     }
+// }
 
 // PUT update user
 async function updateUser(req, res, next) {
@@ -112,32 +112,32 @@ async function getAllAdminUsers(req, res, next) {
 }
 
 // PUT route for updating user details (accessible by the authenticated user)
-async function updateUserDetails(req, res, next) {
-    try {
-        const { firstName, lastName, email, phoneNumber, password } = req.body;
-        const user = await User.findOne({ where: { id: req.params.id } });
+// async function updateUserDetails(req, res, next) {
+//     try {
+//         const { firstName, lastName, email, phoneNumber, password } = req.body;
+//         const user = await User.findOne({ where: { id: req.params.id } });
 
-        if (!user) {
-            return res.status(404).json({ error: `User with id:${req.params.id} not found` });
-        }
+//         if (!user) {
+//             return res.status(404).json({ error: `User with id:${req.params.id} not found` });
+//         }
 
-        user.firstName = firstName;
-        user.lastName = lastName;
-        user.email = email;
-        user.phoneNumber = phoneNumber;
+//         user.firstName = firstName;
+//         user.lastName = lastName;
+//         user.email = email;
+//         user.phoneNumber = phoneNumber;
 
-        if (password) {
-            const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash(password, salt);
-            user.password = hashedPassword;
-        }
+//         if (password) {
+//             const salt = await bcrypt.genSalt(10);
+//             const hashedPassword = await bcrypt.hash(password, salt);
+//             user.password = hashedPassword;
+//         }
 
-        await user.save();
-        res.json({ message: "User profile updated successfully" });
-    } catch (error) {
-        next(error);
-    }
-}
+//         await user.save();
+//         res.json({ message: "User profile updated successfully" });
+//     } catch (error) {
+//         next(error);
+//     }
+// }
 
 // PUT route for updating user's role (accessible by the admin only)
 async function updateUserRole(req, res, next) {
@@ -160,11 +160,11 @@ async function updateUserRole(req, res, next) {
 
 module.exports = {
     getAllUsers,
-    createUser,
+    // createUser,
     updateUser,
     deleteUser,
     getCurrentUser,
     getAllAdminUsers,
-    updateUserDetails,
+    // updateUserDetails,
     updateUserRole
 };
