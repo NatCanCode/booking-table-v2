@@ -33,14 +33,14 @@
 
 | Tâche                                             | Validée | Validation |
 | ------------------------------------------------- | :-----: | ---------- |
-| 🔜 Validation des entrées avec Express Validator |   ❌    |            |
-| 🔜 Sanitisation des données avec Joi             |   ❌    |            |
+| 🔜 Validation des entrées avec Express Validator  |   ✅     |            |
+| 🔜 Sanitisation des données avec Joi              |   ✅     |            |
 
 ## Diagrammes
 
 | Tâche                                 | Validée | Validation |
 | ------------------------------------- | :-----: | ---------- |
-| Création d'un diagramme de classes    |   ❌    |            |
+| Création d'un diagramme de classes    |   ✅    |            |
 | Création d'un diagramme de composants |   ❌    |            |
 
 ## Tests Unitaires
