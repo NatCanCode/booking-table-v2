@@ -28,7 +28,7 @@ logger.http('Debut session');
 const verifyJWT = (req, res, next) => {
   const SECRET_KEY = "secretkey23456"; // A remplacer par la même clé secrète que dans la route signin dans fichier auth.js
   const token = req.header('Authorization');
-
+  console.log(token)
   if(!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
 
   // Try code snippet and catch error if it occurs, and send response

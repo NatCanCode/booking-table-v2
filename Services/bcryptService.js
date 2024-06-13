@@ -1,3 +1,5 @@
+//  Do not implement as bcrypt is already implemented in a different way
+
 const bcrypt = require('bcrypt');
 
 class BcryptService {

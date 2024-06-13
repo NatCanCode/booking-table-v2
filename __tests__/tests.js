@@ -24,8 +24,19 @@ describe('GET /api/reservations', () => {
 });
 
 // ❌
+let token
+
 describe("GET /api/reservations", () => {
-  it("should return a 200 error", async () => {
+  beforeAll( async () => {
+    token = await request(app).post('/auth/signin').send({ 
+      email: "env2@gmail.com",
+      password: "!2Envenven"
+    })
+    // token = JSON.parse(token).text.message
+    console.log(JSON.parse(token).text.message)
+    console.log(token)
+  })
+  it("should return 200", async () => {
     const res = await request(app)
       .get("/api/reservations")
       .set("Authorization", token)
