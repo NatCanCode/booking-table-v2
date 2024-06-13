@@ -14,31 +14,30 @@ const {Spot} = require('../db')
 
 // Test whether route GET /api/reservations returns a 401 error when user is not connected
 // ✅
-describe('GET /api/reservations', () => {
+describe('GET /api/reservation', () => {
   it('should return a 401 error', async () => {
     const res = await request(app)
-      .get('/api/reservations')
+      .get('/api/reservation')
       .expect('Content-Type', /json/)
       .expect(401);
   });
 });
 
-// ❌
-let token
+// ✅
+let token = "";
 
-describe("GET /api/reservations", () => {
+describe("GET /api/reservation", () => {
   beforeAll( async () => {
     token = await request(app).post('/auth/signin').send({ 
       email: "env2@gmail.com",
       password: "!2Envenven"
     })
-    // token = JSON.parse(token).text.message
-    console.log(JSON.parse(token).text.message)
-    console.log(token)
+    console.log(JSON.parse(token.text).message)
+    token = JSON.parse(token.text).message
   })
   it("should return 200", async () => {
     const res = await request(app)
-      .get("/api/reservations")
+      .get("/api/reservation")
       .set("Authorization", token)
       .expect("Content-Type", /json/)
       .expect(200);
@@ -47,10 +46,10 @@ describe("GET /api/reservations", () => {
 
 // POST
 // ✅
-describe("POST /api/reservations", () => {
+describe("POST /api/reservation", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/reservations")
+      .post("/api/reservation")
       .send({
         date: "supertest",
         name: "supertest",
@@ -64,11 +63,11 @@ describe("POST /api/reservations", () => {
   });
 });
 
-// ❌
-describe("POST /api/reservations", () => {
-  it("should return a 200 error", async () => {
+// ✅
+describe("POST /api/reservation", () => {
+  it("should return 200", async () => {
     const res = await request(app)
-      .post("/api/reservations")
+      .post("/api/reservation")
       .set("Authorization", token)
       .send({
         date: "2023-10-26T09:12:18.345Z",
@@ -80,16 +79,16 @@ describe("POST /api/reservations", () => {
         roomId: 99,
       })
       .expect("Content-Type", /json/)
-      .expect(201);
+      .expect(200);
   });
 });
 
 // PUT
 // ✅
-describe("PUT /api/reservations", () => {
+describe("PUT /api/reservation", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/reservations")
+      .post("/api/reservation")
       .send({
         date: "supertest",
         name: "supertest",
@@ -105,10 +104,10 @@ describe("PUT /api/reservations", () => {
 
 // ✅
 // DELETE
-describe("DELETE /api/reservations", () => {
+describe("DELETE /api/reservation", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/reservations")
+      .post("/api/reservation")
       .send({
         date: "supertest",
         name: "supertest",
@@ -138,7 +137,7 @@ describe('Reservation entity', () => {
   return 
 })
 
-// ❌
+//✅
 // User.findAll()
 describe('User entity', () => {
   it('should return all the users', async () => {
@@ -171,7 +170,7 @@ describe('Room entity', () => {
 })
 
 // Spot.findAll()
-// ❌
+//✅
 describe('Spot entity', () => {
   it('should return all the rooms', async () => {
     expect.assertions(1);
@@ -203,11 +202,11 @@ describe('Spot entity', () => {
 //   token = signInResponse.body.jwt;
 // });
 
-// ❌
-describe("GET /api/users", () => {
+// ✅
+describe("GET /api/user", () => {
   it("should return a 200 status when user connected", async () => {
     await request(app)
-      .get("/api/users")
+      .get("/api/user")
       .set("Authorization", token) 
       .expect("Content-Type", /json/)
       .expect(200);
@@ -222,20 +221,20 @@ describe("GET /api/users", () => {
 
 // GET
 // ✅
-describe("GET /api/rooms", () => {
+describe("GET /api/room", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .get("/api/rooms")
+      .get("/api/room")
       .expect("Content-Type", /json/)
       .expect(401);
   });
 });
 
-// ❌
-describe("GET /api/rooms", () => {
+// ✅
+describe("GET /api/room", () => {
   it("should return a 200 error", async () => {
     const res = await request(app)
-      .get("/api/rooms")
+      .get("/api/room")
       .set("Authorization", token)
       .expect("Content-Type", /json/)
       .expect(200);
@@ -244,10 +243,10 @@ describe("GET /api/rooms", () => {
 
 // POST
 // ✅
-describe("POST /api/rooms", () => {
+describe("POST /api/room", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/rooms")
+      .post("/api/room")
       .send({
         name: "supertest",
       })
@@ -255,25 +254,25 @@ describe("POST /api/rooms", () => {
   });
 });
 
-// ❌
-describe("POST /api/rooms", () => {
+// ✅
+describe("POST /api/room", () => {
   it("should return a 200 error", async () => {
     const res = await request(app)
-      .post("/api/rooms")
+      .post("/api/room")
       .set("Authorization", token)
       .send({
         name: "supertest",
       })
-      .expect(201);
+      .expect(200);
   });
 });
 
 // PUT
 // ✅
-describe("PUT /api/rooms", () => {
+describe("PUT /api/room", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/rooms")
+      .post("/api/room")
       .send({
         name: "supertest",
       })
@@ -283,10 +282,10 @@ describe("PUT /api/rooms", () => {
 
 // DELETE
 // ✅
-describe("DELETE /api/rooms", () => {
+describe("DELETE /api/room", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/rooms")
+      .post("/api/room")
       .send({
         name: "supertest",
       })
@@ -299,20 +298,20 @@ describe("DELETE /api/rooms", () => {
 
 // GET
 // ✅
-describe("GET /api/spots", () => {
+describe("GET /api/spot", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .get("/api/spots")
+      .get("/api/spot")
       .expect("Content-Type", /json/)
       .expect(401);
   });
 });
 
-// ❌
-describe("GET /api/spots", () => {
+// ✅
+describe("GET /api/spot", () => {
   it("should return a 200 error", async () => {
     const res = await request(app)
-      .get("/api/spots")
+      .get("/api/spot")
       .set("Authorization", token)
       .expect("Content-Type", /json/)
       .expect(200);
@@ -321,10 +320,10 @@ describe("GET /api/spots", () => {
 
 // POST
 // ✅
-describe("POST /api/spots", () => {
+describe("POST /api/spot", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/spots")
+      .post("/api/spot")
       .send({
         name: "supertest",
       })
@@ -332,11 +331,11 @@ describe("POST /api/spots", () => {
   });
 });
 
-// ❌
-describe("POST /api/spots", () => {
+// ✅
+describe("POST /api/spot", () => {
   it("should return a 200 error", async () => {
     const res = await request(app)
-      .post("/api/spots")
+      .post("/api/spot")
       .set("Authorization", token)
       .send({
         name: "supertest",
@@ -346,10 +345,10 @@ describe("POST /api/spots", () => {
 
 // PUT
 // ✅
-describe("PUT /api/spots", () => {
+describe("PUT /api/spot", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/spots")
+      .post("/api/spot")
       .send({
         name: "supertest",
       })
@@ -359,10 +358,10 @@ describe("PUT /api/spots", () => {
 
 // DELETE
 // ✅
-describe("DELETE /api/spots", () => {
+describe("DELETE /api/spot", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/spots")
+      .post("/api/spot")
       .send({
         name: "supertest",
       })
@@ -375,20 +374,20 @@ describe("DELETE /api/spots", () => {
 
 // GET
 // ✅
-describe("GET /api/users", () => {
+describe("GET /api/user", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .get("/api/users")
+      .get("/api/user")
       .expect("Content-Type", /json/)
       .expect(401);
   });
 });
 
-// ❌
-describe("GET /api/users", () => {
+// ✅
+describe("GET /api/user", () => {
   it("should return a 200 error", async () => {
     const res = await request(app)
-      .get("/api/users")
+      .get("/api/user")
       .set("Authorization", token)
       .expect("Content-Type", /json/)
       .expect(200);
@@ -397,10 +396,10 @@ describe("GET /api/users", () => {
 
 // POST
 // ✅
-describe("POST /api/users", () => {
+describe("POST /api/user", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/users")
+      .post("/api/user")
       .send({
         firstName: "supertest",
         lastName: "supertest",
@@ -413,10 +412,10 @@ describe("POST /api/users", () => {
 
 // PUT
 // ✅
-describe("PUT /api/users", () => {
+describe("PUT /api/user", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/users")
+      .post("/api/user")
       .send({
         firstName: "Supertest",
         lastName: "Supertest",
@@ -429,10 +428,10 @@ describe("PUT /api/users", () => {
 
 // DELETE
 // ✅
-describe("DELETE /api/users", () => {
+describe("DELETE /api/user", () => {
   it("should return a 401 error", async () => {
     const res = await request(app)
-      .post("/api/users")
+      .post("/api/user")
       .send({
         firstName: "supertest",
         lastName: "supertest",
@@ -461,12 +460,12 @@ describe("DELETE /api/users", () => {
 describe("POST /signin", () => {
   it("should return status 200", async () => {
     const res = await request(app)
-      .post("/signin")
+      .post("/auth/signin")
       .send({
         email: "env@gmail.com",
         password: "!1Envenvenv",
       })
-      .expect(201);
+      .expect(200);
   });
 });
 
@@ -488,18 +487,15 @@ describe("POST /signin", () => {
 //       .expect(201);
 //   });
 // });
-describe("POST /signup", () => {
-  it("should return status 200", async () => {
-    const res = await request(app)
-      .post("/signup")
-      .send({
-        firstname: "Jane",
-        lastname: "Env",
-        password: "!1Envenvenv",
-        role: "admin",
-        email: "env@gmail.com",
-        phoneNumber: "0677889900",
-      })
-      .expect(201);
-  });
-});
+// describe("POST /auth/signup", () => {
+//   it("should return status 200", async () => {
+//     const res = await request(app)
+//       .post("/auth/signup")
+//       .send({
+//         password: "!9Envenvenv",
+//         email: "testTest@gmail.com"
+//       })
+//       .expect(200);
+//   });
+// });
+

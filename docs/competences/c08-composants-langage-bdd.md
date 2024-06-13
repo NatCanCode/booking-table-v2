@@ -32,4 +32,4 @@
 
 | Tâche                                                  | Validée | Validation |
 | ------------------------------------------------------ | :-----: | ---------- |
-| Développement de tests unitaires pour chaque composant |   🟠    |            |
+| Développement de tests unitaires pour chaque composant |   ✅    |            |

@@ -17,9 +17,9 @@
 
 | Tâche                                         | Validée | Validation |
 | --------------------------------------------- | :-----: | ---------- |
-| 🔜 Création des classes                      |   ❌    |            |
-| 🔜 Application des principes de POO          |   ❌    |            |
-| 🔜 Nommage cohérent et explicite des classes |   ❌    |            |
+| 🔜 Création des classes                      |   ✅    |            |
+| 🔜 Application des principes de POO          |   ✅    |            |
+| 🔜 Nommage cohérent et explicite des classes |   ✅    |            |
 
 ## Modèles
 

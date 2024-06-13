@@ -25,13 +25,13 @@
 | ------------ | ------ | ---------- |
 | Route        | ✅     |            |
 | Controller   | ✅     |            |
-| 🔜 Services  | ❌     |            |
+| 🔜 Services  | ✅     |            |
 
 ## POO
 
 | Tâches                   | Statut | Validation |
 | ------------------------ | ------ | ---------- |
-| 🔜 Classe               | ❌     |            |
+| 🔜 Classe               | ✅     |            |
 | 🔜 Bonnes pratiques POO | ❌     |            |
 
 ## Sécurité

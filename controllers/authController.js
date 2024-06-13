@@ -10,6 +10,7 @@ async function signup(req, res) {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
         const { role, firstName, lastName, email, phoneNumber } = req.body;
+        console.log(email)
         const user = {
             role: "client",
             firstName,
