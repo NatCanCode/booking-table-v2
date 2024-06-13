@@ -21,7 +21,7 @@
 | Création des dossiers et fichiers Routes (User, Room, Spot...)  | ✅     |      |
 | Création des dossiers et fichiers Modèles (User, Room, Spot...) | ✅     |      |
 | Mise en place des contrôleurs (User, Room, Spot...)             | ✅     |      |
-| 🔜 Implémenter les services                                     | ❌     |      |
+| 🔜 Implémenter les services                                     | ✅     |      |
 
 ## Sécurité
 
@@ -51,11 +51,11 @@
 
 | Tâche                                                                   | Validée | Lien |
 | ----------------------------------------------------------------------- | ------- | ---- |
-| 🔜 Définir une matrice de test pour couvrir toutes les fonctionnalités | ❌       |      |
+| 🔜 Définir une matrice de test pour couvrir toutes les fonctionnalités | ✅       |      |
 | 🔜 Implémenter les tests unitaires et d'intégration                    | 🟠       |      |
 
 ## Documentation API
 
 | Tâche                                               | Validée | Lien |
 | --------------------------------------------------- | ------- | ---- |
-| 🔜 Préparer la documentation de l'API avec Swagger   | ❌      |      |
+| 🔜 Préparer la documentation de l'API avec Swagger   | 🟠      |      |
