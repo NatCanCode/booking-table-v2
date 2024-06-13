@@ -1,14 +1,17 @@
 require('dotenv').config();
+const swaggerSetup = require('./swagger');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const indexRouter = require('./routes/indexRoute');
-const app = express();
 const authRouter = require('./routes/authRoute');
 const jwt = require('jsonwebtoken');
 const morganMiddleware = require("./middlewares/morganMiddleware");
 const logger = require("./utils/logger");
 const cors = require('cors');
+
+const app = express();
+swaggerSetup(app);
 
 corsOptions = {
   origin: '*',

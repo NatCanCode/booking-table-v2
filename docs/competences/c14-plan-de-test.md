@@ -48,4 +48,4 @@
 | ---------------------------------------- | :-----: | ---------------------------------- |
 | 🔜 Mise en place d'une pipeline CI/CD    |   ✅     |                                    |
 | 🔜 Automatisation des tests dans la CI   |   ✅     |                                    |
-| 🔜 Configuration du déploiement continu  |   ❌     |                                    |
+| 🔜 Configuration du déploiement continu  |   ✅     |                                    |
