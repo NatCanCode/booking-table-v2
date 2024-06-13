@@ -28,7 +28,7 @@ const dbconfig = config[environment]
 //     dialect: "postgres",
 //   },
 // }[process.env.ENVIRONMENT || "development"];
-console.log(dbconfig.database)
+// console.log(dbconfig.database)
 
 const sequelize = new Sequelize(
   dbconfig.database,
