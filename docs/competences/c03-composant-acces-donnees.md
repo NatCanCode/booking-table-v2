@@ -51,11 +51,11 @@
 
 | Tâche                                                                   | Validée | Lien |
 | ----------------------------------------------------------------------- | ------- | ---- |
-| 🔜 Définir une matrice de test pour couvrir toutes les fonctionnalités | ✅       |      |
-| 🔜 Implémenter les tests unitaires et d'intégration                    | 🟠       |      |
+| 🔜 Définir une matrice de test pour couvrir toutes les fonctionnalités  | ✅       |      |
+| 🔜 Implémenter les tests unitaires et d'intégration                     | ✅       |      |
 
 ## Documentation API
 
 | Tâche                                               | Validée | Lien |
 | --------------------------------------------------- | ------- | ---- |
-| 🔜 Préparer la documentation de l'API avec Swagger   | 🟠      |      |
+| 🔜 Préparer la documentation de l'API avec Swagger   | ✅      |      |
