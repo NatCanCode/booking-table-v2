@@ -1,4 +1,3 @@
-// mailerService.js
 const nodemailer = require('nodemailer');
 
 class MailerService {
